@@ -124,6 +124,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             width: 2,
                             color: Colors.white,
                           ),
+
                           padding: const EdgeInsets.all(15),
                         ),
                         child: AnimatedTextKit(
