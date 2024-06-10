@@ -28,11 +28,12 @@ class _WelcomePageState extends State<WelcomePage> {
 
   Widget _buildUi(double width, BuildContext context) {
     bool isMobile = ScreenHelper.isMobile(context);
-    double imageSize = isMobile ? 375 : 500;
+    double imageSize = isMobile ? 400 : 600;
     double nameFontSize = isMobile ? 45 : 55;
-    double animatedTextFontSize = isMobile ? 28 : 38;
-    double textImFontSize = isMobile ? 28 : 40;
+    double animatedTextFontSize = isMobile ? 28 : 45;
+    double textImFontSize = isMobile ? 26 : 43;
     double downloadCvFontSize = isMobile ? 25 : 25;
+    double minidescriptionFontSize = isMobile ? 22 : 28;
 
     return Container(
       height: MediaQuery.of(context).size.height,
@@ -55,7 +56,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       const Text(
                         helloTag,
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 30,
                           fontWeight: FontWeight.w100,
                           color: Colors.white,
                         ),
@@ -104,12 +105,12 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Text(
                           minidescription,
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: minidescriptionFontSize,
                             fontWeight: FontWeight.w400,
                             color: Colors.white70,
                           ),
@@ -121,11 +122,11 @@ class _WelcomePageState extends State<WelcomePage> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           side: const BorderSide(
-                            width: 2,
+                            width: 3,
                             color: Colors.white,
                           ),
-
-                          padding: const EdgeInsets.all(15),
+                          backgroundColor: Colors.transparent,
+                          padding: const EdgeInsets.all(20),
                         ),
                         child: AnimatedTextKit(
                           repeatForever: true,
@@ -134,7 +135,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               'Download CV',
                               textStyle: TextStyle(
                                 fontSize: downloadCvFontSize,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w600,
                               ),
                               colors: colorizeColors,
                             ),

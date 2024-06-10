@@ -36,7 +36,7 @@ class _TopBarContentsState extends State<TopBarContents> {
     return ScreenHelper(
       desktop: desktopHeader,
       tablet: desktopHeader,
-      mobile: buildMobileHeader(widget.itemScrollController),
+      mobile: buildMobileHeader(widget.itemScrollController, widget.backgroundColor), // Pass background color
     );
   }
 }
@@ -106,22 +106,25 @@ class DesktopTabBar extends StatelessWidget {
   }
 }
 
-Widget buildMobileHeader(ItemScrollController itemScrollController) => SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            HeaderLogo(),
-            GestureDetector(
-              onTap: () => Globals.scaffoldKey.currentState!.openEndDrawer(),
-              child: const Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 30,
-              ),
-            )
-          ],
+Widget buildMobileHeader(ItemScrollController itemScrollController, Color backgroundColor) => Container(
+      color: backgroundColor, // Use background color here
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HeaderLogo(),
+              GestureDetector(
+                onTap: () => Globals.scaffoldKey.currentState!.openEndDrawer(),
+                child: const Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -12,14 +12,14 @@ const tabletMaxWidth = 760.0;
 const name = 'RITIK SHAH';
 const profileImage = 'assets/photo.jpg';
 
-const helloTag = 'Hi There , Welcome to My Portfolio';
+const helloTag = 'Hi There!, Welcome to My Portfolio';
 
-const minidescription = 'hello';
-const aboutFirst = 'I would like to express our sincere gratitude to everyone who contributed to the completion of this project. Their support and assistance have been invaluable throughout this journey.First and foremost, I would like to extend our heartfelt thanks to Prof.. Soram Wanglen, our supervisor & advisor, for their guidance';
-const aboutSecond = 'I would like to express our sincere gratitude to everyone who contributed to the completion of this project. Their support and assistance have been invaluable throughout this journey.First and foremost, I would like to extend our heartfelt thanks to Prof.. Soram Wanglen, our supervisor & advisor, for their guidance';
-const education = '234';
+const minidescription = 'Dedicated to creating beautiful and functional mobile applications.';
+const aboutFirst = 'I am Ritik Shah, a B.Tech Computer Technology student at Marwadi University, Rajkot, with a C.G.P.A of 8.45. My expertise includes Android and Flutter App Development, WordPress, and JAVA. I interned at Fuerte Developers, specializing in WordPress, and developed an Android chat app using Firebase and a Flutter expense tracker app with SQLite.';
+const aboutSecond = 'Beyond academics, I have coordinated college festivals and organized hostel events. My interests include mobile photography, music, movies, and web surfing. I am dedicated to leveraging my skills in innovative projects and continuously enhancing my software development capabilities.';
+const education = '';
 
-const skill = 'hii there';
+const skill = '';
 
 const address = 'Marwadi University';
 const country = 'India';

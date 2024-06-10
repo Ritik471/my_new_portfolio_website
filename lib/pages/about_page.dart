@@ -42,7 +42,7 @@ class AboutPage extends StatelessWidget {
                     flex: ScreenHelper.isMobile(context) ? 0 : 3,
                     child: Lottie.asset(
                       'assets/animations/coder.json',
-                      width: ScreenHelper.isMobile(context) ? 400 : 400,
+                      width: ScreenHelper.isMobile(context) ? 450 : 400,
                     ),
                   ),
                   const SizedBox(

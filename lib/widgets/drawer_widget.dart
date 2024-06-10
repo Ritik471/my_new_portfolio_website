@@ -12,7 +12,7 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.black,
+        color: kBackgroundColor,
         child: SafeArea(
           child: ListView.separated(
               itemBuilder: (context, index) {

@@ -39,7 +39,7 @@ Widget _buildUi(double width, BuildContext context) {
               child: Text(
                 'EDUCATION',
                 style: GoogleFonts.oswald(
-                  color: kPrimaryColor,
+                  color: Colors.white,
                   fontWeight: FontWeight.w900,
                   fontSize: 40,
                   height: 1.3,
@@ -47,7 +47,7 @@ Widget _buildUi(double width, BuildContext context) {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
             const Wrap(
               children: [
@@ -62,9 +62,6 @@ Widget _buildUi(double width, BuildContext context) {
                   ),
                 ),
               ],
-            ),
-            const SizedBox(
-              height: 40,
             ),
             LayoutBuilder(builder: (context, constraints) {
               return Wrap(
@@ -100,7 +97,7 @@ Widget _buildUi(double width, BuildContext context) {
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  color: kCaptionColor,
+                                  color: Colors.white60,
                                   fontSize: 20,
                                 ),
                               ),
@@ -110,7 +107,7 @@ Widget _buildUi(double width, BuildContext context) {
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  color: kCaptionColor,
+                                  color: Colors.white60,
                                   fontSize: 20,
                                 ),
                               ),
@@ -174,7 +171,7 @@ Widget _buildUi(double width, BuildContext context) {
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  color: kCaptionColor,
+                                  color: Colors.white60,
                                   fontSize: 20,
                                 ),
                               ),
@@ -184,7 +181,7 @@ Widget _buildUi(double width, BuildContext context) {
                                 maxLines: 4,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  color: kCaptionColor,
+                                  color: Colors.white60,
                                   fontSize: 20,
                                 ),
                               ),

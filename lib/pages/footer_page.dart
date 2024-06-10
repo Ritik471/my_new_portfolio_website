@@ -29,22 +29,22 @@ class FooterPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 60,),
                       child: Wrap(
-                        spacing: 10,
-                        runSpacing: 10,
+                        spacing: 15,
+                        runSpacing: 15,
                         children: footerItems
                             .map(
                               (footerItem) => SizedBox(
-                                height: 120,
+                                height: 150,
                                 width: ScreenHelper.isMobile(context)
                                     ? constraints.maxWidth / 2 - 20
                                     : constraints.maxWidth / 4 - 20,
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Image.asset(footerItem.iconPath, width: 25),
+                                        Image.asset(footerItem.iconPath, width: 30),
                                         const SizedBox(width: 15),
                                         Text(
                                           footerItem.title,
@@ -58,7 +58,7 @@ class FooterPage extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 15),
                                     RichText(
-                                      textAlign: TextAlign.start,
+                                      textAlign: TextAlign.center,
                                       text: TextSpan(
                                         children: [
                                           TextSpan(
@@ -94,9 +94,9 @@ class FooterPage extends StatelessWidget {
                           : MainAxisAlignment.spaceBetween,
                       children: [
                         const Padding(
-                          padding: EdgeInsets.only(bottom: 8),
+                          padding: EdgeInsets.all(12),
                           child: Text(
-                            'Copyright (c) 2023 Your Name. All rights reserved.',
+                            'Copyright (c) 2024 Ritik Shah. All rights reserved.',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),

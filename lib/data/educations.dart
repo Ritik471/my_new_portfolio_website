@@ -12,13 +12,13 @@ const List<Education> educations = [
     period: '2019 - 2021',
   ),
   Education(
-    description: 'Diploma in Computer Techhnology',
-    college: 'Priyadarshini Polytechnic, Nagpur, Maharashtra',
-    period: '2019 - 2021',
+    description: 'Higher Secondary Education',
+    college: 'Prerna Convent High School, Nagpur, Maharashtra',
+    period: '2017 - 2019',
   ),
   Education(
-    description: 'Diploma in Computer Techhnology',
-    college: 'Priyadarshini Polytechnic, Nagpur, Maharashtra',
-    period: '2019 - 2021',
+    description: 'Secondary School Education',
+    college: 'Prerna Convent, Nagpur, Maharashtra',
+    period: '2016 - 2017',
   )
 ];
