@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_new_portfolio_website/utils/constants.dart';
+import 'package:my_new_portfolio_website/utils/utils.dart';
 import 'package:my_new_portfolio_website/widgets/screen_helper.dart';
 import 'package:drop_shadow_image/drop_shadow_image.dart';
 
@@ -18,15 +19,6 @@ class _WelcomePageState extends State<WelcomePage> {
     Colors.cyan,
     Colors.brown,
   ];
-
-  @override
-  void initState() {
-    super.initState();
-    // Debug print to check colors
-    for (var color in colorizeColors) {
-      print('Color: $color');
-    }
-  }
 
   @override
   Widget build(BuildContext context) => ScreenHelper(
@@ -127,28 +119,39 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                       ),
                       const SizedBox(height: 30),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          side: const BorderSide(
-                            width: 3,
-                            color: Colors.white,
-                          ),
-                          backgroundColor: Colors.transparent,
-                          padding: const EdgeInsets.all(20),
-                        ),
-                        child: AnimatedTextKit(
-                          repeatForever: true,
-                          animatedTexts: [
-                            ColorizeAnimatedText(
-                              'Download CV',
-                              textStyle: TextStyle(
-                                fontSize: downloadCvFontSize,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              colors: colorizeColors.map((color) => color.shade500).toList(),
+                      GestureDetector(
+                        onTap: () async {
+                          const url =
+                              'https://drive.google.com/uc?export=download&id=16xIoTcUSzY0w7e25S6dZDSWz3BQA2Wks';
+                          await Utils.launchURL(url);
+                        },
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            const url =
+                                'https://drive.google.com/uc?export=download&id=16xIoTcUSzY0w7e25S6dZDSWz3BQA2Wks';
+                            await Utils.launchURL(url);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            side: const BorderSide(
+                              width: 3,
+                              color: Colors.white,
                             ),
-                          ],
+                            backgroundColor: Colors.transparent,
+                            padding: const EdgeInsets.all(20),
+                          ),
+                          child: AnimatedTextKit(
+                            repeatForever: true,
+                            animatedTexts: [
+                              ColorizeAnimatedText(
+                                'Download CV',
+                                textStyle: TextStyle(
+                                  fontSize: downloadCvFontSize,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                colors: colorizeColors,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
