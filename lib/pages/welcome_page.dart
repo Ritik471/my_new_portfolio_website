@@ -12,7 +12,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  final List<Color> colorizeColors = [
+  final List<MaterialColor> colorizeColors = [
     Colors.amber,
     Colors.purple,
     Colors.cyan,
@@ -28,14 +28,14 @@ class _WelcomePageState extends State<WelcomePage> {
 
   Widget _buildUi(double width, BuildContext context) {
     bool isMobile = ScreenHelper.isMobile(context);
-    double imageSize = isMobile ? 400 : 600;
-    double nameFontSize = isMobile ? 45 : 55;
+    double imageSize = isMobile ? 350 : 600;
+    double nameFontSize = isMobile ? 40 : 55;
     double animatedTextFontSize = isMobile ? 28 : 45;
     double textImFontSize = isMobile ? 26 : 43;
-    double downloadCvFontSize = 25;  // Fixed size as in original
-    double minidescriptionFontSize = isMobile ? 22 : 28;
+    double downloadCvFontSize = isMobile ? 22 : 22;
+    double minidescriptionFontSize = isMobile ? 20 : 28;
 
-    return SizedBox(
+    return Container(
       height: MediaQuery.of(context).size.height,
       width: double.infinity,
       child: Center(
@@ -47,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                Container(
                   width: isMobile ? width * 0.9 : width * 0.7,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +56,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       const Text(
                         helloTag,
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 28,
                           fontWeight: FontWeight.w100,
                           color: Colors.white,
                         ),
@@ -72,12 +72,11 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 16),
                       SizedBox(
                         height: 60,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: [
+                          children: <Widget>[
                             Text(
                               'I\'m',
                               style: TextStyle(
@@ -101,7 +100,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                   TyperAnimatedText('Flutter Developer'),
                                 ],
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),
@@ -122,7 +121,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          side: const BorderSide(width: 3, color: Colors.white),
+                          side: const BorderSide(
+                            width: 3,
+                            color: Colors.white,
+                          ),
                           backgroundColor: Colors.transparent,
                           padding: const EdgeInsets.all(20),
                         ),
@@ -133,7 +135,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               'Download CV',
                               textStyle: TextStyle(
                                 fontSize: downloadCvFontSize,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                               ),
                               colors: colorizeColors,
                             ),
@@ -143,13 +145,13 @@ class _WelcomePageState extends State<WelcomePage> {
                     ],
                   ),
                 ),
-                isMobile ? const SizedBox(height: 20) : const SizedBox(width: 40),
+                isMobile ? const SizedBox(height: 5) : const SizedBox(width: 40),
                 Expanded(
                   flex: isMobile ? 0 : 3,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(10),
                       child: DropShadowImage(
                         image: Image.asset(
                           'assets/photo.jpg',
