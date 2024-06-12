@@ -44,6 +44,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   lottie: ^3.1.2
   drop_shadow_image: ^0.9.1
+  dart_code_metrics_presets: ^2.13.0
 
 dev_dependencies:
   flutter_test:

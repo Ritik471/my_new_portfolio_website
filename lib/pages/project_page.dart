@@ -7,7 +7,7 @@ import 'package:my_new_portfolio_website/utils/utils.dart';
 import 'package:my_new_portfolio_website/widgets/screen_helper.dart';
 
 class ProjectPage extends StatelessWidget {
-  const ProjectPage({Key? key});
+  const ProjectPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,7 @@ Widget _buildUi(double width, BuildContext context) {
                     height: 1.3,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 Wrap(
                   spacing: 20,
                   runSpacing: 20,
@@ -61,9 +59,7 @@ Widget _buildUi(double width, BuildContext context) {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
+                const SizedBox(height: 40),
                 LayoutBuilder(
                   builder: (context, constraints) {
                     return Wrap(
@@ -79,9 +75,7 @@ Widget _buildUi(double width, BuildContext context) {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Image.asset(project.image),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
+                                  const SizedBox(height: 20),
                                   Text(
                                     project.description,
                                     maxLines: 4,
@@ -91,9 +85,7 @@ Widget _buildUi(double width, BuildContext context) {
                                       fontSize: 20,
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
+                                  const SizedBox(height: 10),
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: TextButton.icon(
@@ -131,9 +123,7 @@ Widget _buildUi(double width, BuildContext context) {
                     );
                   },
                 ),
-                const SizedBox(
-                  height: 50,
-                ), // Added spacing at the end
+                const SizedBox(height: 50), // Added spacing at the end
               ],
             ),
           ),

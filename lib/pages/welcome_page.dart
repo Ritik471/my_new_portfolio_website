@@ -12,7 +12,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  final List<MaterialColor> colorizeColors = [
+  final List<Color> colorizeColors = [
     Colors.amber,
     Colors.purple,
     Colors.cyan,
@@ -32,10 +32,10 @@ class _WelcomePageState extends State<WelcomePage> {
     double nameFontSize = isMobile ? 45 : 55;
     double animatedTextFontSize = isMobile ? 28 : 45;
     double textImFontSize = isMobile ? 26 : 43;
-    double downloadCvFontSize = isMobile ? 25 : 25;
+    double downloadCvFontSize = 25;  // Fixed size as in original
     double minidescriptionFontSize = isMobile ? 22 : 28;
 
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height,
       width: double.infinity,
       child: Center(
@@ -47,7 +47,7 @@ class _WelcomePageState extends State<WelcomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: isMobile ? width * 0.9 : width * 0.7,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -72,11 +72,12 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                         textAlign: TextAlign.center,
                       ),
+                      const SizedBox(height: 16),
                       SizedBox(
                         height: 60,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
+                          children: [
                             Text(
                               'I\'m',
                               style: TextStyle(
@@ -100,7 +101,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                   TyperAnimatedText('Flutter Developer'),
                                 ],
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -121,10 +122,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          side: const BorderSide(
-                            width: 3,
-                            color: Colors.white,
-                          ),
+                          side: const BorderSide(width: 3, color: Colors.white),
                           backgroundColor: Colors.transparent,
                           padding: const EdgeInsets.all(20),
                         ),

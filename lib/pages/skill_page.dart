@@ -19,7 +19,7 @@ class SkillPage extends StatelessWidget {
 
   Widget _buildMobileUi(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.only(bottom: 30),  // Added bottom padding
+      padding: const EdgeInsets.only(bottom: 30), // Added bottom padding
       child: _buildUi(ScreenHelper.mobileMaxWidth(context), context),
     );
   }
@@ -57,10 +57,11 @@ class SkillPage extends StatelessWidget {
                           child: Text(
                             'SKILLS',
                             style: GoogleFonts.oswald(
-                                color: kPrimaryColor,
-                                fontSize: 40,
-                                fontWeight: FontWeight.w900,
-                                height: 1.3),
+                              color: kPrimaryColor,
+                              fontSize: 40,
+                              fontWeight: FontWeight.w900,
+                              height: 1.3,
+                            ),
                           ),
                         ),
                         const Padding(
@@ -110,7 +111,9 @@ class SkillPage extends StatelessWidget {
                                         Text(
                                           '${skill.percentage}%',
                                           style: const TextStyle(
-                                              color: Colors.white, fontSize: 16),
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
                                         ),
                                       ],
                                     ),

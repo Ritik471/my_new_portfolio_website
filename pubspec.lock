@@ -73,6 +73,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  dart_code_metrics_presets:
+    dependency: "direct main"
+    description:
+      name: dart_code_metrics_presets
+      sha256: "2fb7c4a2dd9627fff0493bbfdf1b6049bc218836559cc10aeaff3f460eed4ca8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.13.0"
   drop_shadow_image:
     dependency: "direct main"
     description:
