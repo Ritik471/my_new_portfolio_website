@@ -45,13 +45,13 @@ class FooterPage extends StatelessWidget {
 
   Widget _buildFooterItems(BoxConstraints constraints, BuildContext context) {
     return Wrap(
-      spacing: 15,
-      runSpacing: 15,
+      spacing: 10,
+      runSpacing: 10,
       children: footerItems.map((footerItem) {
         return SizedBox(
           height: 150,
           width: ScreenHelper.isMobile(context)
-              ? constraints.maxWidth / 2 - 20
+              ? constraints.maxWidth / 2 - 10
               : constraints.maxWidth / 4 - 20,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

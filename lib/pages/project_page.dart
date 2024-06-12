@@ -123,7 +123,7 @@ Widget _buildUi(double width, BuildContext context) {
                     );
                   },
                 ),
-                const SizedBox(height: 50), // Added spacing at the end
+                const SizedBox(height: 30), // Added spacing at the end
               ],
             ),
           ),

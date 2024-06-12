@@ -38,7 +38,7 @@ class EducationPage extends StatelessWidget {
               _buildHeader('EDUCATION'),
               // const SizedBox(height: 40), // Removed this line to remove the space
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: EdgeInsets.symmetric(horizontal: 5),
                 child: Text(
                   education,
                   style: TextStyle(

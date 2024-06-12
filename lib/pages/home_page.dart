@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Widget> pages = const [
+  List<Widget> pages = const [
     WelcomePage(),
     AboutPage(),
     ProjectPage(),
@@ -27,15 +27,22 @@ class _HomePageState extends State<HomePage> {
     SkillPage(),
     FooterPage(),
   ];
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionListener = ItemPositionsListener.create();
+  final itemScrollController = ItemScrollController();
+  final pageController = PageController(initialPage: 0);
+  final itemPositionlistener = ItemPositionsListener.create();
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: Globals.scaffoldKey,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100),
+        preferredSize: const Size(100, 100),
         child: TopBarContents(
           opacity: 0,
           itemScrollController: itemScrollController,
@@ -43,17 +50,17 @@ class _HomePageState extends State<HomePage> {
       ),
       endDrawer: DrawerWidget(itemController: itemScrollController),
       body: Container(
-        color: kBackgroundColor,
+        color:kBackgroundColor,
         child: ScrollablePositionedList.builder(
-          initialScrollIndex: 0,
-          shrinkWrap: true,
-          itemPositionsListener: itemPositionListener,
-          itemScrollController: itemScrollController,
-          itemCount: pages.length,
-          itemBuilder: (context, index) {
-            return pages[index];
-          },
-        ),
+            initialScrollIndex: 0,
+            shrinkWrap: true,
+            itemPositionsListener: itemPositionlistener,
+            itemScrollController: itemScrollController,
+            itemCount: pages.length,
+            itemBuilder: (context, index) {
+              final page = pages[index];
+              return page;
+            },),
       ),
     );
   }
