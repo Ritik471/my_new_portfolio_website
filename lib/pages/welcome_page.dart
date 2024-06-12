@@ -20,6 +20,15 @@ class _WelcomePageState extends State<WelcomePage> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    // Debug print to check colors
+    for (var color in colorizeColors) {
+      print('Color: $color');
+    }
+  }
+
+  @override
   Widget build(BuildContext context) => ScreenHelper(
         desktop: _buildUi(desktopMaxWidth, context),
         tablet: _buildUi(tabletMaxWidth, context),
@@ -137,7 +146,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 fontSize: downloadCvFontSize,
                                 fontWeight: FontWeight.w500,
                               ),
-                              colors: colorizeColors,
+                              colors: colorizeColors.map((color) => color.shade500).toList(),
                             ),
                           ],
                         ),
