@@ -122,7 +122,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       ElevatedButton(
                         onPressed: () async {
                           const url =
-                              'https://drive.google.com/uc?export=download&id=16xIoTcUSzY0w7e25S6dZDSWz3BQA2Wks';
+                              'https://drive.google.com/uc?export=download&id=10NTQjHmPo8RsYoLqesSzMSidDVaAlLHK';
                           await Utils.launchURL(url);
                         },
                         style: ElevatedButton.styleFrom(
