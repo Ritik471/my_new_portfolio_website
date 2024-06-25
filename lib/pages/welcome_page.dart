@@ -119,45 +119,35 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                       ),
                       const SizedBox(height: 30),
-                      GestureDetector(
-                        onTap: () async {
+                      ElevatedButton(
+                        onPressed: () async {
                           const url =
                               'https://drive.google.com/uc?export=download&id=16xIoTcUSzY0w7e25S6dZDSWz3BQA2Wks';
                           await Utils.launchURL(url);
                         },
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            const url =
-                                'https://drive.google.com/uc?export=download&id=16xIoTcUSzY0w7e25S6dZDSWz3BQA2Wks';
-                            await Utils.launchURL(url);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            side: const BorderSide(
-                              width: 3,
-                              color: Colors.white,
-                            ),
-                            backgroundColor: Colors.transparent,
-                            padding: const EdgeInsets.all(20),
+                        style: ElevatedButton.styleFrom(
+                          side: const BorderSide(
+                            width: 2,
+                            color: Colors.white,
                           ),
-                          child: AnimatedTextKit(
-                            repeatForever: true,
-                            animatedTexts: [
-                              ColorizeAnimatedText(
-                                'Download CV',
-                                textStyle: TextStyle(
-                                  fontSize: downloadCvFontSize,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                colors: colorizeColors,
-                              ),
-                            ],
+                          backgroundColor: Colors.transparent,
+                          padding: const EdgeInsets.all(20),
+                        ),
+                        child: Text(
+                          'Download CV',
+                          style: TextStyle(
+                            fontSize: downloadCvFontSize,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.amber,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                isMobile ? const SizedBox(height: 5) : const SizedBox(width: 40),
+                isMobile
+                    ? const SizedBox(height: 5)
+                    : const SizedBox(width: 40),
                 Expanded(
                   flex: isMobile ? 0 : 3,
                   child: Padding(

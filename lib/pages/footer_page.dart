@@ -100,46 +100,46 @@ class FooterPage extends StatelessWidget {
   }
 
   Widget _buildFooterText(BuildContext context) {
+    final bool isMobile = ScreenHelper.isMobile(context);
+    final double fontSize = isMobile ? 13.0 : 16.0;
+
     return Flex(
-      direction:
-          ScreenHelper.isMobile(context) ? Axis.vertical : Axis.horizontal,
-      mainAxisAlignment: ScreenHelper.isMobile(context)
-          ? MainAxisAlignment.center
-          : MainAxisAlignment.spaceBetween,
+      direction: isMobile ? Axis.vertical : Axis.horizontal,
+      mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.spaceBetween,
       children: [
-        const Padding(
-          padding: EdgeInsets.all(12),
+        Padding(
+          padding: const EdgeInsets.all(12),
           child: Text(
             'Copyright (c) 2024 Ritik Shah. All rights reserved.',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontSize: fontSize),
           ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _buildFooterLink('Privacy Policy'),
+            _buildFooterLink('Privacy Policy', fontSize),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: const Text(
+              child: Text(
                 '|',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white, fontSize: fontSize),
               ),
             ),
-            _buildFooterLink('Terms & Conditions'),
+            _buildFooterLink('Terms & Conditions', fontSize),
           ],
         ),
       ],
     );
   }
 
-  Widget _buildFooterLink(String text) {
+  Widget _buildFooterLink(String text, double fontSize) {
     return GestureDetector(
       onTap: () {},
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: Text(
           text,
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: fontSize),
         ),
       ),
     );

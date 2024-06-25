@@ -1,6 +1,7 @@
 import 'package:my_new_portfolio_website/models/footer_item.dart';
 import 'package:my_new_portfolio_website/utils/constants.dart';
- List<FooterItem> footerItems = [
+
+List<FooterItem> footerItems = [
   FooterItem(
     iconPath: 'assets/map.png',
     title: 'ADDRESS',
@@ -8,9 +9,9 @@ import 'package:my_new_portfolio_website/utils/constants.dart';
     text2: country,
   ),
   FooterItem(
-    iconPath: 'assets/whatsapp.png',
-    title: 'WHATSAPP',
-    text1: '+91-7888257529',
+    iconPath: 'assets/linkedin2.png',
+    title: 'LINKED-IN',
+    text1: 'www.linkedin.com/in/ritikshah2000',
     text2: '',
   ),
   FooterItem(
