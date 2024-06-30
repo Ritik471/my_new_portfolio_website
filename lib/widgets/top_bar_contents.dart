@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:my_new_portfolio_website/utils/constants.dart';
 import 'package:my_new_portfolio_website/utils/globals.dart';
@@ -10,7 +9,7 @@ class TopBarContents extends StatefulWidget {
     super.key,
     required this.itemScrollController,
     required this.opacity,
-    this.backgroundColor = Colors.black38, // Add background color parameter
+    this.backgroundColor = topBarColor// Add background color parameter
   });
 
   final double opacity;
@@ -80,7 +79,7 @@ class DesktopTabBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            HeaderLogo(), // Place HeaderLogo widget at the left side
+            const HeaderLogo(), // Use the updated HeaderLogo widget
             const Spacer(), // Add Spacer to push menu items to the right
             Row(
               mainAxisSize: MainAxisSize.min,
@@ -114,7 +113,7 @@ Widget buildMobileHeader(ItemScrollController itemScrollController, Color backgr
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              HeaderLogo(),
+              const HeaderLogo(),
               GestureDetector(
                 onTap: () => Globals.scaffoldKey.currentState!.openEndDrawer(),
                 child: const Icon(
@@ -130,23 +129,13 @@ Widget buildMobileHeader(ItemScrollController itemScrollController, Color backgr
     );
 
 class HeaderLogo extends StatelessWidget {
-  HeaderLogo({super.key});
-
-  final style = GoogleFonts.oswald(
-    color: Colors.white,
-    fontWeight: FontWeight.bold,
-    fontSize: 36,
-  );
+  const HeaderLogo({super.key});
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10),
-        child: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(text: '<RITIK/>', style: style),
-            ],
-          ),
-        ),
-      );
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 0),
+      child: Image.asset('assets/sidelogo.jpg',height:150,),
+    );
+  }
 }

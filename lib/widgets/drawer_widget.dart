@@ -4,7 +4,7 @@ import 'package:my_new_portfolio_website/utils/constants.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({Key? key, required this.itemController}) : super(key: key);
+  const DrawerWidget({super.key, required this.itemController});
 
   final ItemScrollController itemController;
 
